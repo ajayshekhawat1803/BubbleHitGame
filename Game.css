@@ -226,12 +226,18 @@ body {
 /*  For Responsiveness of Game.......... Media Queries */
 
 @media screen and (max-width: 550px) {
+    #main{
+        width: 87%;
+    }
     .elem {
         width: auto;
     }
 }
 
 @media screen and (max-width: 420px) {
+    #main{
+        width: 93%;
+    }
     .elem {
         gap: 5px;
     }
@@ -246,6 +252,9 @@ body {
 }
 
 @media screen and (max-width: 375px) {
+    #main{
+        width: 95%;
+    }
     .container {
         width: 230px;
     }
