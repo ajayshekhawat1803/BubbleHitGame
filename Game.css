@@ -103,7 +103,7 @@ body {
 
 
 #rules li {
-    list-style: disc;
+    list-style: none;
     margin-top: 5px;
     font-size: 15px;
 }
@@ -247,7 +247,7 @@ body {
     }
 
     .container {
-        width: 260px;
+        width: 80%;
     }
 }
 
@@ -255,12 +255,12 @@ body {
     #main{
         width: 95%;
     }
-    .container {
-        width: 230px;
-    }
 
     .container>h2 {
-        font-size: 27px;
+        font-size: 25px;
+    }
+    #startbtn{
+        margin-top: 12px;
     }
 }
 
