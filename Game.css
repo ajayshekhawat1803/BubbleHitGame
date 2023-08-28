@@ -1,15 +1,17 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-:root{
-    --bw:calc((100% - 20px)/60);
-    --bh:calc((100% - 100px)/60);
+
+:root {
+    --bw: calc((100% - 20px)/60);
+    --bh: calc((100% - 100px)/60);
     --bnum: calc(var(--bh) * var(--bw));
 }
 
-html,body{
+html,
+body {
     width: 100%;
     height: 100%;
     background-color: rgb(176, 243, 205);
@@ -18,7 +20,7 @@ html,body{
     align-items: center;
 }
 
-#main{
+#main {
     position: relative;
     background-color: #fff;
     width: 80%;
@@ -30,25 +32,28 @@ html,body{
     align-items: center;
     flex-direction: column;
 }
-.container{
+
+.container {
     position: absolute;
     top: 38%;
-    width: 300px;
+    width: 330px;
     border-radius: 7px;
     padding: 10px;
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    box-shadow: 2px 2px 2px rgb(246, 101, 82),-2px -2px 2px rgb(211, 249, 20);
+    box-shadow: 2px 2px 2px rgb(246, 101, 82), -2px -2px 2px rgb(211, 249, 20);
     background: #dbf8df;
 }
-.container>h2{
+
+.container>h2 {
     font-size: 30px;
     -webkit-text-stroke: 1px red;
     color: black;
 }
-#startbtn{
+
+#startbtn {
     border: 1px solid rgba(255, 255, 255, 0.4);
     padding: 15px 30px;
     border-radius: 7px;
@@ -57,32 +62,53 @@ html,body{
     font-weight: bold;
     letter-spacing: 1px;
     word-spacing: 2px;
-    background: linear-gradient(to bottom right,#0000d2,#3ad779);
+    background: linear-gradient(to bottom right, #0000d2, #3ad779);
     color: #fff;
     background-color: #0000d2;
     z-index: 2;
     margin-top: 20px;
 }
-#startbtn:hover{
+
+#startbtn:hover {
     font-size: 22px;
 }
-.row{
+
+.row {
     width: 90%;
     margin: 10px 0px;
 }
-#seerules{
+
+#seerules {
     cursor: pointer;
 }
-#rules{
+
+#rules {
+    padding-right: 8px;
     display: none;
+    overflow-y: scroll;
+    text-overflow: ellipsis;
+    max-height: 200px;
 }
-#rules li{
-    list-style:square;
+
+#rules::-webkit-scrollbar{
+    width: 5px;
+    background-color: rgb(136, 167, 242);
+    border-radius: 8px;
+    /* display: none; */
+}
+#rules::-webkit-scrollbar-thumb{
+    background: rgb(146, 7, 252);
+    border-radius: 5px;
+}
+
+
+#rules li {
+    list-style: disc;
     margin-top: 5px;
     font-size: 15px;
 }
 
-#gtop{
+#gtop {
     width: 100%;
     height: 80px;
     background-color: rgb(6, 129, 59);
@@ -92,25 +118,28 @@ html,body{
     padding: 10px;
     color: rgb(107, 243, 166);
 }
-.elem{
+
+.elem {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 15px;
     width: 30%;
 }
-.elem .box{
+
+.elem .box {
     background-color: #fff;
     padding: 5px 10px;
     border-radius: 5px;
     color: #000;
     font-weight: 600;
 }
-.bubble{
+
+.bubble {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background-color:#3ad779;
+    background-color: #3ad779;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -118,11 +147,13 @@ html,body{
     font-weight: 600;
     color: #000;
 }
-.bubble:hover{
-    background-color:#50e48b;
+
+.bubble:hover {
+    background-color: #50e48b;
     cursor: pointer;
 }
-#gbtm{
+
+#gbtm {
     width: 100%;
     height: calc(100% - 108px);
     padding: 10px;
@@ -134,24 +165,28 @@ html,body{
     border: 2px solid;
     border-bottom: none;
 }
-#gameover{
+
+#gameover {
     font-size: 45px;
     margin-bottom: 30px;
     color: red;
     text-shadow: 2px 2px 5px rgb(1, 142, 1);
     text-align: center;
 }
-#scorecard{
+
+#scorecard {
     color: #1c00ac;
     text-align: center;
 }
-#scorecard span{
+
+#scorecard span {
     color: #59015f;
     font-weight: 800;
     margin-left: 20px;
     text-shadow: 1px 1px 2px red;
     font-size: 40px;
 }
+
 #playagain {
     font-size: 25px;
     border: 2px transparent #000;
@@ -163,11 +198,12 @@ html,body{
     margin-top: 25px;
     font-weight: 500;
 }
-#playagain:hover{
+
+#playagain:hover {
     border: 2px solid #000;
 }
 
-#makenewbubbles{
+#makenewbubbles {
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -182,32 +218,45 @@ html,body{
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
 }
-#makenewbubbles:hover{
+
+#makenewbubbles:hover {
     font-size: 21px;
 }
+
 /*  For Responsiveness of Game.......... Media Queries */
 
 @media screen and (max-width: 550px) {
-    .elem{
+    .elem {
         width: auto;
     }
 }
+
 @media screen and (max-width: 420px) {
-    .elem{
+    .elem {
         gap: 5px;
     }
-    #gtop{
+
+    #gtop {
         flex-wrap: wrap;
     }
-    .container{
+
+    .container {
         width: 260px;
     }
 }
+
 @media screen and (max-width: 375px) {
-    .container{
+    .container {
         width: 230px;
     }
+
     .container>h2 {
         font-size: 27px;
+    }
+}
+
+@media screen and (max-height: 560px) {
+    #rules {
+        height: 80px;
     }
 }

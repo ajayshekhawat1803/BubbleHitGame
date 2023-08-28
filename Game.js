@@ -56,16 +56,7 @@ function increaseScore() {
     score += 10;
     document.querySelector(".score").textContent = score
 }
-// Event listioner to listen the event i.e click on the bubble
-gbtm.addEventListener("click", function check(dets) {
-    checking = parseInt(dets.target.textContent); // parseint used to convert the string into integer as textcontent returns a string 
-    if (checking == newHit) {
-        increaseScore();        // If values are matched then score is increased
-        gbtm.innerHTML = "";    // To clear the white screen so that new bubbles can be filled up
-        makeBubble();           // To create new bubbles
-        makeNewHit();           // To create new hit
-    }
-})
+
 seerules.addEventListener("click", () => {
     if (rules.style.display != "block") {
         rules.style.display = "block"
@@ -80,7 +71,18 @@ seerules.addEventListener("click", () => {
 })
 startbtn.addEventListener("click", () => {
     runTimer();         // Run the Timer 
-    document.querySelector(".container").style.display = "none";
+    document.querySelector(".container").style.display = "none";        // To disapper the panel
+
+    // Event listioner to listen the event i.e click on the bubble
+    gbtm.addEventListener("click", function check(dets) {
+        checking = parseInt(dets.target.textContent); // parseint used to convert the string into integer as textcontent returns a string 
+        if (checking == newHit) {
+            increaseScore();        // If values are matched then score is increased
+            gbtm.innerHTML = "";    // To clear the white screen so that new bubbles can be filled up
+            makeBubble();           // To create new bubbles
+            makeNewHit();           // To create new hit
+        }
+    })
 })
 //initial function call to:
 makeBubble();       // Create bubble for the first time when screen is loaded
