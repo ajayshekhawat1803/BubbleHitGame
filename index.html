@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Game.css">
+</head>
+
+<body>
+    <div class="container">
+        <h2>Bubble Hit Game</h2>
+        <button id="startbtn">Start Game</button>
+        <div class="row">
+            <h3 id="seerules">See Rules :  ⬇️</h3>
+            <ul id="rules">
+                <li>A new hit is created every time that has to be hitted by the user.</li>
+                <li>On clicking the same number in the bubble score will increase by 10.</li>
+                <li>All bubbles will relocate after every correct hit.</li>
+                <li>Game will run for 60s and after the timer ends game will stop and final score is displayed.</li>
+            </ul>
+        </div>
+    </div>
+    <div id="main">
+        <div id="gtop">
+            <div class="elem">
+                <h2>Hit</h2>
+                <div class="box hit">1</div>
+            </div>
+            <div class="elem">
+                <h2>Timer</h2>
+                <div class="box timer">60</div>
+            </div>
+            <div class="elem">
+                <h2>Score</h2>
+                <div class="box score">0</div>
+            </div>
+        </div>
+        <div id="gbtm">
+
+        </div>
+    </div>
+    <script src="Game.js"></script>
+</body>
+
+</html>
