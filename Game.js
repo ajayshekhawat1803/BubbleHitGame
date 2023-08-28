@@ -1,22 +1,22 @@
-var gbtm = document.getElementById("gbtm")
-var clutter = document.querySelector("#gbtm");
-var newHit;         // Variable to Store value of new hit
-var timer = 60      // Variable to  store Timer value
-var score = 0;      // variable to store Score
-var checking;       // Variable to store value that is inside the bubble upon which the user has clicked
+let gbtm = document.getElementById("gbtm")
+let clutter = document.querySelector("#gbtm");
+let newHit;         // Variable to Store value of new hit
+let timer = 60      // Variable to  store Timer value
+let score = 0;      // variable to store Score
+let checking;       // Variable to store value that is inside the bubble upon which the user has clicked
 let seerules = document.getElementById("seerules");
 let rules = document.getElementById("rules");
 let startbtn = document.getElementById("startbtn");
-
-// Below code is just to calculate how much bubble are to  be needed to correctly fill the screen #responsive design 
-var bh = Math.floor((document.getElementById("gbtm").clientHeight) / 60);
-var bw = Math.floor((document.getElementById("gbtm").clientWidth) / 60);
-var bn = bh * bw;
-// Till Here 
+let makenewbubbles = document.getElementById("makenewbubbles");
 
 
 // All functions used are defined here :
 function makeBubble() {
+    // Below code is just to calculate how much bubble are to  be needed to correctly fill the screen #responsive design 
+    let bh = Math.floor((document.getElementById("gbtm").clientHeight) / 60);
+    let bw = Math.floor((document.getElementById("gbtm").clientWidth) / 60);
+    let bn = bh * bw;
+    // Till Here 
     var bubblenum;
     for (let i = 1; i <= bn; i++) {
         bubblenum = Math.floor(Math.random() * 10)
@@ -70,10 +70,12 @@ seerules.addEventListener("click", () => {
     if (rules.style.display != "block") {
         rules.style.display = "block"
         seerules.textContent = "Lets Play ▶️ ";
+        document.querySelector(".container").style.top = "16%";
     }
     else {
         rules.style.display = "none";
         seerules.textContent = "See Rules :  ⬇️";
+        document.querySelector(".container").style.top = "38%";
     }
 })
 startbtn.addEventListener("click", () => {
@@ -84,6 +86,10 @@ startbtn.addEventListener("click", () => {
 makeBubble();       // Create bubble for the first time when screen is loaded
 makeNewHit();        // Create a Hit for the first time when screen is loaded
 
+makenewbubbles.addEventListener("click", () => {   // it will help to create new bubbles in case if there is no matching hit
+    gbtm.innerHTML = "";
+    makeBubble();
+})
 
 
 
